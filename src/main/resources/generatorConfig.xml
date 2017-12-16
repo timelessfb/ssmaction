@@ -54,8 +54,16 @@
 
 
         <!-- 指定数据库表 -->
-        <table tableName="orders"/>
+        <table tableName="category"/>
+        <table tableName="order_"/>
+        <table tableName="orderitem"/>
+        <table tableName="product"/>
+        <table tableName="productimage"/>
+        <table tableName="property"/>
+        <table tableName="propertyvalue"/>
+        <table tableName="review"/>
         <table tableName="user"/>
+
 
 
         <!-- 有些表的字段需要指定java类型
