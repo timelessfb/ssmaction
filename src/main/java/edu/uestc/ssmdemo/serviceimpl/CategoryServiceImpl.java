@@ -20,4 +20,8 @@ public class CategoryServiceImpl implements CategoryService {
         List<Category> categories = categoryMapper.selectByExample(categoryExample);
         return categories;
     }
+
+    public void add(Category category) {
+        categoryMapper.insert(category);
+    }
 }
