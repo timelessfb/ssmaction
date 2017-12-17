@@ -51,6 +51,16 @@
         <property name="dataSource" ref="dataSource"/>
         <!-- 配置MyBaties全局配置文件:mybatis-config.xml，可有可无 -->
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <value>
+                        </value>
+                    </property>
+                </bean>
+            </array>
+        </property>
         <!-- 扫描entity包（pojo） 使用别名，此处并不是注册pojo到spring context,只是告诉工厂一个数据类型 -->
         <property name="typeAliasesPackage" value="edu.uestc.ssmdemo.entity"/>
         <!-- 扫描sql配置文件:mapper需要的xml文件 -->
