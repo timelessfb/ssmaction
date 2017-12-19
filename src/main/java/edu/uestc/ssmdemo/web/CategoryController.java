@@ -46,4 +46,30 @@ public class CategoryController {
         return "redirect:/admin_category_list";
     }
 
+    @RequestMapping("admin_category_delete")
+    public String delete(int id, HttpSession session) {
+        categoryService.delete(id);
+        new File(session.getServletContext().getRealPath("img/category"));
+        return "redirect:/admin_category_list";
+    }
+
+    @RequestMapping("admin_category_edit")
+    public String edit(int id, Model model) {
+        Category c = categoryService.get(id);
+        model.addAttribute("c", c);
+        return "admin/editCategory";
+    }
+
+    @RequestMapping("admin_category_update")
+    public String update(Category c, HttpSession session, MultipartFile image) throws IOException {
+        categoryService.update(c);
+        if (null != image && !image.isEmpty()) {
+            String imageFolder = session.getServletContext().getRealPath("img/category");
+            File file = new File(imageFolder, c.getId() + ".jpg");//创建图片文件
+            if (!file.getParentFile().exists())
+                file.getParentFile().mkdirs();
+            image.transferTo(file);//向磁盘写文件
+        }
+        return "redirect:/admin_category_list";
+    }
 }

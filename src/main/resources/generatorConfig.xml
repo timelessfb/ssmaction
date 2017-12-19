@@ -54,15 +54,33 @@
 
 
         <!-- 指定数据库表 -->
-        <table tableName="category"/>
-        <table tableName="order_"/>
-        <table tableName="orderitem"/>
-        <table tableName="product"/>
-        <table tableName="productimage"/>
-        <table tableName="property"/>
-        <table tableName="propertyvalue"/>
-        <table tableName="review"/>
-        <table tableName="user"/>
+        <table tableName="category">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="order_">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="orderitem">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="product">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="productimage">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="property">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="propertyvalue">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="review">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="user">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
 
 
         <!-- 有些表的字段需要指定java类型

@@ -103,19 +103,22 @@
     </if>
   </delete>
   <insert id="insert" parameterType="edu.uestc.ssmdemo.entity.Product">
-    insert into product (id, name, subTitle, 
-      originalPrice, promotePrice, stock, 
-      cid, createDate)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{subtitle,jdbcType=VARCHAR}, 
-      #{originalprice,jdbcType=REAL}, #{promoteprice,jdbcType=REAL}, #{stock,jdbcType=INTEGER}, 
-      #{cid,jdbcType=INTEGER}, #{createdate,jdbcType=TIMESTAMP})
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into product (name, subTitle, originalPrice, 
+      promotePrice, stock, cid, 
+      createDate)
+    values (#{name,jdbcType=VARCHAR}, #{subtitle,jdbcType=VARCHAR}, #{originalprice,jdbcType=REAL}, 
+      #{promoteprice,jdbcType=REAL}, #{stock,jdbcType=INTEGER}, #{cid,jdbcType=INTEGER}, 
+      #{createdate,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="edu.uestc.ssmdemo.entity.Product">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
     insert into product
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
       <if test="name != null">
         name,
       </if>
@@ -139,9 +142,6 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>

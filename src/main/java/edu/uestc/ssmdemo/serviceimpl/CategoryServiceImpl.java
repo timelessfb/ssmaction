@@ -24,4 +24,17 @@ public class CategoryServiceImpl implements CategoryService {
     public void add(Category category) {
         categoryMapper.insert(category);
     }
+
+    public void delete(int id) {
+        categoryMapper.deleteByPrimaryKey(id);
+    }
+
+    public Category get(int id) {
+        Category category = categoryMapper.selectByPrimaryKey(id);
+        return category;
+    }
+
+    public void update(Category c) {
+        categoryMapper.updateByPrimaryKeySelective(c);
+    }
 }
