@@ -98,17 +98,18 @@
     </if>
   </delete>
   <insert id="insert" parameterType="edu.uestc.ssmdemo.entity.Productimage">
-    insert into productimage (id, pid, type
-      )
-    values (#{id,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}
-      )
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into productimage (pid, type)
+    values (#{pid,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="edu.uestc.ssmdemo.entity.Productimage">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
     insert into productimage
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
       <if test="pid != null">
         pid,
       </if>
@@ -117,9 +118,6 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
       <if test="pid != null">
         #{pid,jdbcType=INTEGER},
       </if>

@@ -17,7 +17,24 @@ public class CategoryServiceImpl implements CategoryService {
     public List<Category> list() {
         CategoryExample categoryExample = new CategoryExample();
         categoryExample.setOrderByClause("id desc");
-        List<Category> cs = categoryMapper.selectByExample(categoryExample);
-        return cs;
+        List<Category> categories = categoryMapper.selectByExample(categoryExample);
+        return categories;
+    }
+
+    public void add(Category category) {
+        categoryMapper.insert(category);
+    }
+
+    public void delete(int id) {
+        categoryMapper.deleteByPrimaryKey(id);
+    }
+
+    public Category get(int id) {
+        Category category = categoryMapper.selectByPrimaryKey(id);
+        return category;
+    }
+
+    public void update(Category c) {
+        categoryMapper.updateByPrimaryKeySelective(c);
     }
 }
