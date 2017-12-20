@@ -31,12 +31,12 @@ public class PropertyServiceImpl implements PropertyService {
         return property;
     }
 
-    public List list(int cid) {
+    public List<Property> list(int cid) {
         PropertyExample example = new PropertyExample();
         PropertyExample.Criteria criteria = example.createCriteria();
         criteria.andCidEqualTo(cid);
         example.setOrderByClause("id desc");
-        propertyMapper.selectByExample(example);
-        return null;
+        List<Property> properties = propertyMapper.selectByExample(example);
+        return properties;
     }
 }
