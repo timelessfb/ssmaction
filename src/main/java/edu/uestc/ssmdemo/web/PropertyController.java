@@ -57,6 +57,7 @@ public class PropertyController {
     @RequestMapping("admin_property_edit")
     public String edit(int id, Model model) {
         Property p = propertyService.get(id);
+        //在controller层做联合查询的操作
         Category category = categoryService.get(p.getCid());
         p.setCategory(category);
         model.addAttribute("p", p);

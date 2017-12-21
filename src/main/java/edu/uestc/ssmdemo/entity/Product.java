@@ -19,6 +19,16 @@ public class Product {
 
     private Date createdate;
 
+    private Productimage firstProductImage;
+
+    public Productimage getFirstProductImage() {
+        return firstProductImage;
+    }
+
+    public void setFirstProductImage(Productimage firstProductImage) {
+        this.firstProductImage = firstProductImage;
+    }
+
     public Integer getId() {
         return id;
     }
