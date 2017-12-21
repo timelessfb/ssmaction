@@ -1,6 +1,6 @@
 package edu.uestc.ssmdemo.entity;
 
-public class Productimage {
+public class ProductImage {
     private Integer id;
 
     private Integer pid;

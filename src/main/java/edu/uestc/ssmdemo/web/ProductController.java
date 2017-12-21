@@ -4,7 +4,6 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import edu.uestc.ssmdemo.entity.Category;
 import edu.uestc.ssmdemo.entity.Product;
-import edu.uestc.ssmdemo.entity.Property;
 import edu.uestc.ssmdemo.service.CategoryService;
 import edu.uestc.ssmdemo.service.ProductService;
 import edu.uestc.ssmdemo.utils.Page;

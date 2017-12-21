@@ -1,6 +1,6 @@
 package edu.uestc.ssmdemo.entity;
 
-public class Propertyvalue {
+public class PropertyValue {
     private Integer id;
 
     private Integer pid;

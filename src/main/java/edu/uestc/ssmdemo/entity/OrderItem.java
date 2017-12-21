@@ -1,6 +1,6 @@
 package edu.uestc.ssmdemo.entity;
 
-public class Orderitem {
+public class OrderItem {
     private Integer id;
 
     private Integer pid;

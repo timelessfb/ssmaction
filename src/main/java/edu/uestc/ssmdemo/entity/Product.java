@@ -19,13 +19,13 @@ public class Product {
 
     private Date createDate;
 
-    private Productimage firstProductImage;
+    private ProductImage firstProductImage;
 
-    public Productimage getFirstProductImage() {
+    public ProductImage getFirstProductImage() {
         return firstProductImage;
     }
 
-    public void setFirstProductImage(Productimage firstProductImage) {
+    public void setFirstProductImage(ProductImage firstProductImage) {
         this.firstProductImage = firstProductImage;
     }
 
