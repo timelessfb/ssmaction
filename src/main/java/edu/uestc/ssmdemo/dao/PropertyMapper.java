@@ -3,13 +3,8 @@ package edu.uestc.ssmdemo.dao;
 import edu.uestc.ssmdemo.entity.Property;
 import edu.uestc.ssmdemo.entity.PropertyExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
 public interface PropertyMapper {
-    long countByExample(PropertyExample example);
-
-    int deleteByExample(PropertyExample example);
-
     int deleteByPrimaryKey(Integer id);
 
     int insert(Property record);
@@ -19,10 +14,6 @@ public interface PropertyMapper {
     List<Property> selectByExample(PropertyExample example);
 
     Property selectByPrimaryKey(Integer id);
-
-    int updateByExampleSelective(@Param("record") Property record, @Param("example") PropertyExample example);
-
-    int updateByExample(@Param("record") Property record, @Param("example") PropertyExample example);
 
     int updateByPrimaryKeySelective(Property record);
 

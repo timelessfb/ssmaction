@@ -7,8 +7,6 @@ public class Property {
 
     private String name;
 
-    private Category category;
-
     public Category getCategory() {
         return category;
     }
@@ -16,6 +14,8 @@ public class Property {
     public void setCategory(Category category) {
         this.category = category;
     }
+
+    private Category category;
 
     public Integer getId() {
         return id;

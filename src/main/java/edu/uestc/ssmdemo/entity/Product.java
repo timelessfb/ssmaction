@@ -7,17 +7,17 @@ public class Product {
 
     private String name;
 
-    private String subtitle;
+    private String subTitle;
 
-    private Float originalprice;
+    private Float originalPrice;
 
-    private Float promoteprice;
+    private Float promotePrice;
 
     private Integer stock;
 
     private Integer cid;
 
-    private Date createdate;
+    private Date createDate;
 
     private Productimage firstProductImage;
 
@@ -45,28 +45,28 @@ public class Product {
         this.name = name == null ? null : name.trim();
     }
 
-    public String getSubtitle() {
-        return subtitle;
+    public String getSubTitle() {
+        return subTitle;
     }
 
-    public void setSubtitle(String subtitle) {
-        this.subtitle = subtitle == null ? null : subtitle.trim();
+    public void setSubTitle(String subTitle) {
+        this.subTitle = subTitle == null ? null : subTitle.trim();
     }
 
-    public Float getOriginalprice() {
-        return originalprice;
+    public Float getOriginalPrice() {
+        return originalPrice;
     }
 
-    public void setOriginalprice(Float originalprice) {
-        this.originalprice = originalprice;
+    public void setOriginalPrice(Float originalPrice) {
+        this.originalPrice = originalPrice;
     }
 
-    public Float getPromoteprice() {
-        return promoteprice;
+    public Float getPromotePrice() {
+        return promotePrice;
     }
 
-    public void setPromoteprice(Float promoteprice) {
-        this.promoteprice = promoteprice;
+    public void setPromotePrice(Float promotePrice) {
+        this.promotePrice = promotePrice;
     }
 
     public Integer getStock() {
@@ -85,11 +85,11 @@ public class Product {
         this.cid = cid;
     }
 
-    public Date getCreatedate() {
-        return createdate;
+    public Date getCreateDate() {
+        return createDate;
     }
 
-    public void setCreatedate(Date createdate) {
-        this.createdate = createdate;
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 }

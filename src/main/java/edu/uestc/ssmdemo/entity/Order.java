@@ -5,7 +5,7 @@ import java.util.Date;
 public class Order {
     private Integer id;
 
-    private String ordercode;
+    private String orderCode;
 
     private String address;
 
@@ -15,15 +15,15 @@ public class Order {
 
     private String mobile;
 
-    private String usermessage;
+    private String userMessage;
 
-    private Date createdate;
+    private Date createDate;
 
-    private Date paydate;
+    private Date payDate;
 
-    private Date deliverydate;
+    private Date deliveryDate;
 
-    private Date confirmdate;
+    private Date confirmDate;
 
     private Integer uid;
 
@@ -37,12 +37,12 @@ public class Order {
         this.id = id;
     }
 
-    public String getOrdercode() {
-        return ordercode;
+    public String getOrderCode() {
+        return orderCode;
     }
 
-    public void setOrdercode(String ordercode) {
-        this.ordercode = ordercode == null ? null : ordercode.trim();
+    public void setOrderCode(String orderCode) {
+        this.orderCode = orderCode == null ? null : orderCode.trim();
     }
 
     public String getAddress() {
@@ -77,44 +77,44 @@ public class Order {
         this.mobile = mobile == null ? null : mobile.trim();
     }
 
-    public String getUsermessage() {
-        return usermessage;
+    public String getUserMessage() {
+        return userMessage;
     }
 
-    public void setUsermessage(String usermessage) {
-        this.usermessage = usermessage == null ? null : usermessage.trim();
+    public void setUserMessage(String userMessage) {
+        this.userMessage = userMessage == null ? null : userMessage.trim();
     }
 
-    public Date getCreatedate() {
-        return createdate;
+    public Date getCreateDate() {
+        return createDate;
     }
 
-    public void setCreatedate(Date createdate) {
-        this.createdate = createdate;
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 
-    public Date getPaydate() {
-        return paydate;
+    public Date getPayDate() {
+        return payDate;
     }
 
-    public void setPaydate(Date paydate) {
-        this.paydate = paydate;
+    public void setPayDate(Date payDate) {
+        this.payDate = payDate;
     }
 
-    public Date getDeliverydate() {
-        return deliverydate;
+    public Date getDeliveryDate() {
+        return deliveryDate;
     }
 
-    public void setDeliverydate(Date deliverydate) {
-        this.deliverydate = deliverydate;
+    public void setDeliveryDate(Date deliveryDate) {
+        this.deliveryDate = deliveryDate;
     }
 
-    public Date getConfirmdate() {
-        return confirmdate;
+    public Date getConfirmDate() {
+        return confirmDate;
     }
 
-    public void setConfirmdate(Date confirmdate) {
-        this.confirmdate = confirmdate;
+    public void setConfirmDate(Date confirmDate) {
+        this.confirmDate = confirmDate;
     }
 
     public Integer getUid() {
