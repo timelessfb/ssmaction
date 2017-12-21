@@ -6,4 +6,8 @@ import java.util.List;
 
 public interface ProductService {
     List<Product> list(int cid);
+
+    void delete(int id);
+
+    Product get(int id);
 }

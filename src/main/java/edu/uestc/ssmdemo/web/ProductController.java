@@ -38,7 +38,19 @@ public class ProductController {
         model.addAttribute("c", c);
         model.addAttribute("page", page);
         model.addAttribute("ps", ps);
-
         return "admin/listProduct";
+    }
+
+    @RequestMapping("admin_product_delete")
+    public String delete(int id) {
+        productService.delete(id);
+        return "admin/listProduct";
+    }
+
+    @RequestMapping("admin_product_edit")
+    public String edit(int id, Model model) {
+        Product p = productService.get(id);
+        model.addAttribute("p", p);
+        return "admin/editProduct";
     }
 }

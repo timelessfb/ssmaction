@@ -39,4 +39,13 @@ public class ProductServiceImpl implements ProductService {
 
         return products;
     }
+
+    public void delete(int id) {
+        productMapper.deleteByPrimaryKey(id);
+    }
+
+    public Product get(int id) {
+        Product product = productMapper.selectByPrimaryKey(id);
+        return product;
+    }
 }
