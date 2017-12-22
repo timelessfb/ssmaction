@@ -10,4 +10,8 @@ public interface ProductService {
     void delete(int id);
 
     Product get(int id);
+
+    void update(Product p);
+
+    void add(Product p);
 }

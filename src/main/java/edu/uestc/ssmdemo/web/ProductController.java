@@ -50,7 +50,21 @@ public class ProductController {
     @RequestMapping("admin_product_edit")
     public String edit(int id, Model model) {
         Product p = productService.get(id);
+        p.setCategory(categoryService.get(p.getCid()));
         model.addAttribute("p", p);
         return "admin/editProduct";
+    }
+
+    @RequestMapping("admin_product_update")
+    public String update(Product p) {
+        productService.update(p);
+        return "redirect:admin_product_list?cid=" + p.getCid();
+    }
+
+    @RequestMapping("admin_product_add")
+    public String add(Product p) {
+        productService.add(p);
+        System.out.println(p.getCid());
+        return "redirect:admin_product_list?cid=" + p.getCid();
     }
 }

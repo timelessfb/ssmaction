@@ -28,14 +28,11 @@ public class ProductServiceImpl implements ProductService {
         List<Product> products = productMapper.selectByExample(productExample);
 
         for (Product product : products) {
-            System.out.println(product.getId());
             ProductImageExample productimageExample = new ProductImageExample();
             productimageExample.createCriteria().andPidEqualTo(product.getId());
-            System.out.println(productimageExample);
             List<ProductImage> productimages = productImageMapper.selectByExample(productimageExample);
             product.setFirstProductImage(productimages.get(0));
         }
-        System.out.println(products);
 
         return products;
     }
@@ -47,5 +44,13 @@ public class ProductServiceImpl implements ProductService {
     public Product get(int id) {
         Product product = productMapper.selectByPrimaryKey(id);
         return product;
+    }
+
+    public void update(Product p) {
+        productMapper.updateByPrimaryKeySelective(p);
+    }
+
+    public void add(Product p) {
+        productMapper.insertSelective(p);
     }
 }
